@@ -1,4 +1,4 @@
-# $Revision: 1.1 $ $Date: 2004-05-29 18:46:05 $
+# $Revision: 1.2 $ $Date: 2004-05-29 22:21:15 $
 
 %include	/usr/lib/rpm/macros.perl
 
@@ -12,11 +12,11 @@ Group:		Applications/Databases
 Source0:	http://www.rbt.ca/autodoc/binaries/%{name}-%{version}.tar.gz
 # Source0-md5:	c3e8ed8f31dbd8f4712364478efab9bf
 URL:		http://www.rbt.ca/autodoc/
-BuildRequires:	rpm-perlprov >= 4.1-13
-BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	perl-DBI
 BuildRequires:	perl-DBD-Pg
 BuildRequires:	perl-HTML-Template
+BuildRequires:	perl-devel >= 1:5.8.0
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -41,7 +41,8 @@ kontroluj±cych proces formatowania plików wynikowych.
 %setup -q -n %{name}
 
 %build
-%configure --datadir=%{_datadir}/postgresql_autodoc
+%configure \
+	--datadir=%{_datadir}/postgresql_autodoc
 %{__make}
 
 %install
@@ -58,5 +59,4 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/postgresql_autodoc
-%dir %{_datadir}/postgresql_autodoc
 %{_datadir}/postgresql_autodoc
