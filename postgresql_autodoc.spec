@@ -1,16 +1,16 @@
-# $Revision: 1.2 $ $Date: 2004-05-29 22:21:15 $
+# $Revision: 1.3 $ $Date: 2004-06-09 11:13:16 $
 
 %include	/usr/lib/rpm/macros.perl
 
 Summary:	postgresql_autodoc - Perl script for creating documentaion for PostgreSQL databases
 Summary(pl):	postgresql_autodoc - skrypt Perla umo¿liwiaj±cy tworzenie dokumentacji baz PostgreSQL
 Name:		postgresql_autodoc
-Version:	1.22
+Version:	1.23
 Release:	1
 License:	BSD-like
 Group:		Applications/Databases
 Source0:	http://www.rbt.ca/autodoc/binaries/%{name}-%{version}.tar.gz
-# Source0-md5:	c3e8ed8f31dbd8f4712364478efab9bf
+# Source0-md5:	8a7a964c7c74d450d61662d11e196378
 URL:		http://www.rbt.ca/autodoc/
 BuildRequires:	perl-DBI
 BuildRequires:	perl-DBD-Pg
