@@ -1,9 +1,9 @@
-# $Revision: 1.5 $ $Date: 2005-10-02 17:45:15 $
+# $Revision: 1.6 $ $Date: 2007-02-12 01:06:27 $
 
 %include	/usr/lib/rpm/macros.perl
 
 Summary:	postgresql_autodoc - Perl script for creating documentaion for PostgreSQL databases
-Summary(pl):	postgresql_autodoc - skrypt Perla umo¿liwiaj±cy tworzenie dokumentacji baz PostgreSQL
+Summary(pl.UTF-8):   postgresql_autodoc - skrypt Perla umoÅ¼liwiajÄ…cy tworzenie dokumentacji baz PostgreSQL
 Name:		postgresql_autodoc
 Version:	1.25
 Release:	1
@@ -28,14 +28,14 @@ describes the database.
 The default output may be changed or new types may be created by
 altering the Templates which control the text file formatting.
 
-%description -l pl
-postgresql_autodoc jest narzêdziem potrafi±cym przeanalizowaæ tabele
-systemowe PostgreSQL w celu utworzenia plików HTML, Dot, Dia i DocBook
-XML opisuj±cych analizowan± bazê danych.
+%description -l pl.UTF-8
+postgresql_autodoc jest narzÄ™dziem potrafiÄ…cym przeanalizowaÄ‡ tabele
+systemowe PostgreSQL w celu utworzenia plikÃ³w HTML, Dot, Dia i DocBook
+XML opisujÄ…cych analizowanÄ… bazÄ™ danych.
 
-Domy¶lna postaæ wyników mo¿e byæ zmieniana, a nowe typy plików
-wynikowych mog± byæ tworzone poprzez zmiany w szablonach
-kontroluj±cych proces formatowania plików wynikowych.
+DomyÅ›lna postaÄ‡ wynikÃ³w moÅ¼e byÄ‡ zmieniana, a nowe typy plikÃ³w
+wynikowych mogÄ… byÄ‡ tworzone poprzez zmiany w szablonach
+kontrolujÄ…cych proces formatowania plikÃ³w wynikowych.
 
 %prep
 %setup -q -n %{name}
