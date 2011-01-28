@@ -1,4 +1,3 @@
-# $Revision: 1.9 $ $Date: 2009-03-15 20:47:46 $
 
 %include	/usr/lib/rpm/macros.perl
 
