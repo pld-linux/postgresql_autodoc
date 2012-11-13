@@ -4,12 +4,13 @@
 Summary:	postgresql_autodoc - Perl script for creating documentaion for PostgreSQL databases
 Summary(pl.UTF-8):	postgresql_autodoc - skrypt Perla umożliwiający tworzenie dokumentacji baz PostgreSQL
 Name:		postgresql_autodoc
-Version:	1.31
+Version:	1.41
 Release:	1
 License:	BSD-like
 Group:		Applications/Databases
 Source0:	http://www.rbt.ca/autodoc/binaries/%{name}-%{version}.tar.gz
-# Source0-md5:	0dbb61cf8b78da7ae9d12221f7a14d27
+# Source0-md5:	a23ae4a49bfd0c14375b3ea6e04cd5b9
+Patch0:		%{name}-Makefile.patch
 URL:		http://www.rbt.ca/autodoc/
 BuildRequires:	perl-DBI
 BuildRequires:	perl-DBD-Pg
@@ -17,6 +18,7 @@ BuildRequires:	perl-HTML-Template
 BuildRequires:	perl-Term-ReadKey
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+Requires:	perl-DBD-Pg
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -39,19 +41,16 @@ kontrolujących proces formatowania plików wynikowych.
 
 %prep
 %setup -q -n %{name}
+%patch0 -p0
 
 %build
-%configure
-
-%{__make}
+%{__make} PREFIX=%{_usr}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/postgresql_autodoc}
 
-%{__make} install \
-	bindir=$RPM_BUILD_ROOT%{_bindir} \
-	datadir=$RPM_BUILD_ROOT%{_datadir}/postgresql_autodoc
+%{__make} DESTDIR=$RPM_BUILD_ROOT PREFIX=%{_usr} install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -60,3 +59,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/postgresql_autodoc
 %{_datadir}/postgresql_autodoc
+%{_mandir}/man1/postgresql_autodoc.1*
