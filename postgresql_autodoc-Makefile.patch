@@ -1,0 +1,11 @@
+--- Makefile.old	2012-01-05 16:31:42.000000000 +0100
++++ Makefile	2012-11-12 16:02:07.186671635 +0100
+@@ -23,7 +23,7 @@
+ SED = $$(which sed)
+ 
+ 
+-all: ${BINARY} ${MANPAGE}
++all: ${BINARY}
+ 
+ ${MANPAGE}: ${MANPAGE_SOURCE}
+ 	${SED} -e "s,@@TEMPLATE-DIR@@,${DATADIR}," \
